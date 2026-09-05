@@ -1,0 +1,206 @@
+{
+  "env": {
+    "python": "3.14.0",
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "machine": "AMD64",
+    "xgboost": "3.3.0"
+  },
+  "dataset": {
+    "rows": 6362620,
+    "frauds": 8213,
+    "fraud_rate": 0.001290820448180152,
+    "steps": [
+      1,
+      743
+    ],
+    "type_counts": {
+      "CASH_OUT": 2237500,
+      "PAYMENT": 2151495,
+      "CASH_IN": 1399284,
+      "TRANSFER": 532909,
+      "DEBIT": 41432
+    },
+    "fraud_by_type": {
+      "CASH_IN": 0,
+      "CASH_OUT": 4116,
+      "DEBIT": 0,
+      "PAYMENT": 0,
+      "TRANSFER": 4097
+    }
+  },
+  "rule_baseline_full": {
+    "tp": 16,
+    "fp": 0,
+    "fn": 8197,
+    "tn": 6354407,
+    "precision": 1.0,
+    "recall": 0.0019481310118105442
+  },
+  "features": [
+    "amount",
+    "hour",
+    "day",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "errBalOrig",
+    "errBalDest",
+    "origZeroedOut",
+    "destIsMerchant",
+    "amountToBalanceRatio",
+    "origPriorTxnCount",
+    "origTimeSinceLast",
+    "destPriorTxnCount",
+    "destTimeSinceLast",
+    "destPriorAmtMean",
+    "amountOverDestMean",
+    "type_CASH_IN",
+    "type_CASH_OUT",
+    "type_DEBIT",
+    "type_PAYMENT",
+    "type_TRANSFER"
+  ],
+  "random_split": {
+    "sizes": {
+      "train": 4453834,
+      "val": 636262,
+      "test": 1272524
+    },
+    "fraud_counts": {
+      "train": 5749,
+      "val": 821,
+      "test": 1643
+    },
+    "scale_pos_weight": 773.7145590537485,
+    "lr_train_s": 11.993914604187012,
+    "lr": {
+      "pr_auc": 0.5650331843019872,
+      "roc_auc": 0.9957639707852813,
+      "threshold": 0.9994031190872192,
+      "precision": 0.625,
+      "recall": 0.5477784540474742,
+      "f1": 0.5838469023678236,
+      "tp": 900,
+      "fp": 540,
+      "fn": 743,
+      "tn": 1270341
+    },
+    "rf_train_s": 198.68923020362854,
+    "rf": {
+      "pr_auc": 0.9980410953917499,
+      "roc_auc": 0.9998622774984209,
+      "threshold": 0.8899221849348087,
+      "precision": 1.0,
+      "recall": 0.995739500912964,
+      "f1": 0.9978652028057334,
+      "tp": 1636,
+      "fp": 0,
+      "fn": 7,
+      "tn": 1270881
+    },
+    "xgb_train_s": 18.027766466140747,
+    "xgb_best_iteration": 5,
+    "xgb": {
+      "pr_auc": 0.9985817924647076,
+      "roc_auc": 0.9999556597455991,
+      "threshold": 0.7305121421813965,
+      "precision": 1.0,
+      "recall": 0.996956786366403,
+      "f1": 0.9984760743675709,
+      "tp": 1638,
+      "fp": 0,
+      "fn": 5,
+      "tn": 1270881
+    }
+  },
+  "temporal_split_steps": {
+    "train_max_step": 281.0,
+    "val_max_step": 323.0
+  },
+  "temporal_split": {
+    "sizes": {
+      "train": 3820599,
+      "val": 642988,
+      "test": 1899033
+    },
+    "fraud_counts": {
+      "train": 3193,
+      "val": 450,
+      "test": 4570
+    },
+    "scale_pos_weight": 1195.5546507986219,
+    "lr_train_s": 8.265963554382324,
+    "lr": {
+      "pr_auc": 0.6709388265505192,
+      "roc_auc": 0.9944507793991115,
+      "threshold": 0.994331955909729,
+      "precision": 0.7438040345821325,
+      "recall": 0.5647702407002189,
+      "f1": 0.6420398009950249,
+      "tp": 2581,
+      "fp": 889,
+      "fn": 1989,
+      "tn": 1893574
+    },
+    "rf_train_s": 139.47683000564575,
+    "rf": {
+      "pr_auc": 0.9999961596901188,
+      "roc_auc": 0.999999990644162,
+      "threshold": 0.8793174342656026,
+      "precision": 1.0,
+      "recall": 0.9916849015317286,
+      "f1": 0.995825093386069,
+      "tp": 4532,
+      "fp": 0,
+      "fn": 38,
+      "tn": 1894463
+    },
+    "xgb_train_s": 13.98360538482666,
+    "xgb_best_iteration": 7,
+    "xgb": {
+      "pr_auc": 0.9996950983348123,
+      "roc_auc": 0.9999027011333318,
+      "threshold": 0.7319062352180481,
+      "precision": 1.0,
+      "recall": 0.9951859956236324,
+      "f1": 0.9975871901732836,
+      "tp": 4548,
+      "fp": 0,
+      "fn": 22,
+      "tn": 1894463
+    }
+  },
+  "xgb_gain_importance": {
+    "errBalOrig": 188973.375,
+    "newbalanceOrig": 181939.125,
+    "origZeroedOut": 173536.515625,
+    "amountToBalanceRatio": 20176.681640625,
+    "amount": 10184.8662109375,
+    "destIsMerchant": 5666.78564453125,
+    "oldbalanceOrg": 4887.55615234375,
+    "amountOverDestMean": 2010.5885009765625,
+    "oldbalanceDest": 973.1026611328125,
+    "errBalDest": 918.3551025390625,
+    "type_DEBIT": 886.734375,
+    "type_CASH_OUT": 735.0478515625,
+    "type_CASH_IN": 431.9333801269531,
+    "type_TRANSFER": 392.8446350097656,
+    "destPriorAmtMean": 351.5017395019531,
+    "destPriorTxnCount": 329.7065734863281,
+    "destTimeSinceLast": 323.3898010253906,
+    "day": 322.1274719238281,
+    "newbalanceDest": 282.0024108886719,
+    "hour": 277.9525451660156,
+    "type_PAYMENT": 188.36874389648438
+  },
+  "latency_ms": {
+    "single_p50": 0.20745000074384734,
+    "single_p95": 0.42302000510972,
+    "single_p99": 0.8110579909407546,
+    "single_mean": 0.2915836889717159,
+    "batch1000_p50": 0.5390999940573238,
+    "batch1000_p99": 1.14318799591274,
+    "throughput_txn_per_s_batched": 1854943.4446732115
+  }
+}

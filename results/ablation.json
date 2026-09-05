@@ -1,0 +1,52 @@
+{
+  "G1_transaction_only": {
+    "n_features": 8,
+    "pr_auc": 0.29408448416094374,
+    "roc_auc": 0.9359828147971994,
+    "precision": 0.3633841886269071,
+    "recall": 0.4013129102844639,
+    "f1": 0.3814079234688572,
+    "train_s": 11.498496770858765,
+    "best_iteration": 0
+  },
+  "G2_plus_raw_balances": {
+    "n_features": 12,
+    "pr_auc": 0.9685653563587321,
+    "roc_auc": 0.9998654659955595,
+    "precision": 0.9830985915492958,
+    "recall": 0.8400437636761487,
+    "f1": 0.9059587020648967,
+    "train_s": 53.553553104400635,
+    "best_iteration": 167
+  },
+  "G3_plus_consistency": {
+    "n_features": 17,
+    "pr_auc": 0.999564110401338,
+    "roc_auc": 0.9997664819807699,
+    "precision": 1.0,
+    "recall": 0.9929978118161925,
+    "f1": 0.9964866051822574,
+    "train_s": 13.583460330963135,
+    "best_iteration": 3
+  },
+  "G4_full_plus_velocity": {
+    "n_features": 23,
+    "pr_auc": 0.9994937405084581,
+    "roc_auc": 0.999912457770765,
+    "precision": 1.0,
+    "recall": 0.9993435448577681,
+    "f1": 0.9996716646601729,
+    "train_s": 15.011818885803223,
+    "best_iteration": 1
+  },
+  "G5_txn_plus_velocity_no_balance": {
+    "n_features": 14,
+    "pr_auc": 0.4090024303700809,
+    "roc_auc": 0.9609840164159796,
+    "precision": 0.4777432712215321,
+    "recall": 0.40393873085339166,
+    "f1": 0.4377519563670856,
+    "train_s": 12.43083930015564,
+    "best_iteration": 1
+  }
+}

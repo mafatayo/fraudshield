@@ -1,0 +1,22 @@
+loaded (6362620, 11) in 6.8s
+rule baseline: {'tp': 16, 'fp': 0, 'fn': 8197, 'tn': 6354407, 'precision': 1.0, 'recall': 0.0019481310118105442}
+features built in 8.4s -> (6362620, 23)
+
+=== protocol: random ===
+C:\Users\VICTUS2025\AppData\Roaming\Python\Python314\site-packages\sklearn\linear_model\_logistic.py:1457: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  LR: PR-AUC=0.5650 ROC-AUC=0.9958 P=0.625 R=0.548 F1=0.584
+  RF: PR-AUC=0.9980 ROC-AUC=0.9999 P=1.000 R=0.996 F1=0.998
+  XGB: PR-AUC=0.9986 ROC-AUC=1.0000 P=1.000 R=0.997 F1=0.998
+
+=== protocol: temporal ===
+C:\Users\VICTUS2025\AppData\Roaming\Python\Python314\site-packages\sklearn\linear_model\_logistic.py:1457: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  LR: PR-AUC=0.6709 ROC-AUC=0.9945 P=0.744 R=0.565 F1=0.642
+  RF: PR-AUC=1.0000 ROC-AUC=1.0000 P=1.000 R=0.992 F1=0.996
+  XGB: PR-AUC=0.9997 ROC-AUC=0.9999 P=1.000 R=0.995 F1=0.998
+
+latency benchmark...
+{'single_p50': 0.20745000074384734, 'single_p95': 0.42302000510972, 'single_p99': 0.8110579909407546, 'single_mean': 0.2915836889717159, 'batch1000_p50': 0.5390999940573238, 'batch1000_p99': 1.14318799591274, 'throughput_txn_per_s_batched': 1854943.4446732115}
+
+DONE � metrics.json written

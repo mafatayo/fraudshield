@@ -1,0 +1,28 @@
+# Dataset (redistribute via Kaggle, not this repo)
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+
+# Working files not meant for the public repo
+~$*
+*.tmp
+tmp/
+pgseminar_text.txt
+pptx_dump.txt
+seminar001_text.txt
+slides/
+paper/~$*
+
+# Not meant for a public repo: unsubmitted thesis, personal exam prep, and
+# the Bridges manuscript itself (that venue requires double-blind review --
+# a public copy before/during review risks de-anonymizing the submission).
+thesis/
+paper/
+
