@@ -1,0 +1,32 @@
+{
+ "features": [
+  "amount",
+  "hour",
+  "day",
+  "oldbalanceOrg",
+  "newbalanceOrig",
+  "oldbalanceDest",
+  "newbalanceDest",
+  "errBalOrig",
+  "errBalDest",
+  "origZeroedOut",
+  "destIsMerchant",
+  "amountToBalanceRatio",
+  "origPriorTxnCount",
+  "origTimeSinceLast",
+  "destPriorTxnCount",
+  "destTimeSinceLast",
+  "destPriorAmtMean",
+  "amountOverDestMean",
+  "type_CASH_IN",
+  "type_CASH_OUT",
+  "type_DEBIT",
+  "type_PAYMENT",
+  "type_TRANSFER"
+ ],
+ "threshold": 0.7319062352180481,
+ "best_iteration": 7,
+ "rounds": 8,
+ "version": "b7240c591040",
+ "trained_on": "temporal train window (step <= 60th percentile)"
+}

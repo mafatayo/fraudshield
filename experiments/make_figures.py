@@ -32,10 +32,10 @@ with open(os.path.join(OUT, "metrics.json")) as f:
     M = json.load(f)
 
 # ------------------------------------------------ Fig 1: architecture diagram
-fig, ax = plt.subplots(figsize=(7.0, 3.2))
+fig, ax = plt.subplots(figsize=(7.0, 3.6))
 ax.axis("off")
 ax.set_xlim(0, 100)
-ax.set_ylim(0, 44)
+ax.set_ylim(0, 48)
 
 def box(x, y, w, h, label, sub="", fc="#eef3f8", ec="#0072B2"):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.6",
@@ -54,7 +54,7 @@ def arrow(x1, y1, x2, y2, label="", style="-|>", color="#333333", ls="-"):
         ax.text((x1 + x2) / 2, (y1 + y2) / 2 + 1.6, label, ha="center",
                 fontsize=6.3, color="#333333", style="italic")
 
-box(1, 26, 15, 12, "Transaction\nSources", "wallets · cards\ncrypto ramps", fc="#f5f5f5", ec=GRAY)
+box(1, 26, 15, 12, "Transaction\nSources", "mobile wallets\nand agents", fc="#f5f5f5", ec=GRAY)
 box(22, 26, 15, 12, "Apache Kafka", "transactions\ntopic")
 box(43, 26, 18, 12, "Spark Streaming", "feature\ncomputation")
 box(47, 6, 12, 10, "Redis", "behavioral state\nvelocity counters", fc="#fdf3e7", ec=C_ORANGE)
@@ -64,13 +64,24 @@ box(88, 15, 11, 9, "PostgreSQL", "transactions\n& scores", fc="#f5f5f5", ec=GRAY
 
 arrow(16, 32, 22, 32)
 arrow(37, 32, 43, 32)
-arrow(61, 32, 67, 32)
-ax.text(64, 40.5, "feature\nvector", ha="center", fontsize=6.3,
-        color="#333333", style="italic")
+arrow(61, 34.5, 67, 34.5, "predict_proba(x)")
+arrow(67, 29, 61, 29, "fraud score", ls="--")
 arrow(50, 26, 51, 16, "update", color=C_ORANGE)
 arrow(56, 16, 57, 26, "lookup", color=C_ORANGE)
-arrow(82, 34, 88, 36, "fraud score")
-arrow(82, 30, 88, 20)
+# Persist and alert are issued by Spark, using the score XGBoost returns,
+# not by XGBoost directly (Algorithm 3.1, steps 7 and 10-12). Both paths are
+# routed as right-angle steps well clear of every box, above and below the
+# scorer, rather than as a smooth curve through it.
+ax.plot([46, 46, 93, 93], [38, 44, 44, 41.6], color="#333333", lw=1.0)
+ax.add_patch(FancyArrowPatch((93, 41.6), (93, 41), arrowstyle="-|>",
+             mutation_scale=9, color="#333333", lw=1.0))
+ax.text(72, 45.3, "route_to_review_or_block", ha="center", fontsize=6.3,
+        color="#333333", style="italic")
+ax.plot([60, 60, 93, 93], [26, 3, 3, 16], color="#333333", lw=1.0)
+ax.add_patch(FancyArrowPatch((93, 16.6), (93, 16), arrowstyle="-|>",
+             mutation_scale=9, color="#333333", lw=1.0))
+ax.text(72, 1.7, "postgres_persist", ha="center", fontsize=6.3,
+        color="#333333", style="italic")
 plt.savefig(os.path.join(FIG, "fig1_architecture.png"))
 plt.close()
 print("fig1 done", flush=True)

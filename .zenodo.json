@@ -1,0 +1,11 @@
+{
+  "title": "FraudShield: reference implementation and experiments for real-time fraud detection on PaySim",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Fatayo, Michael Akorede", "affiliation": "Lead City University, Ibadan, Nigeria"}
+  ],
+  "description": "Code and results behind the MSc thesis \"Development of a Real-Time Software System for Fraud Detection in High-Volume Financial Transaction Streams\" (Lead City University). A runnable, fault-injectable reference implementation of an idempotent transaction-scoring pipeline, the feature scheme, and the PaySim experiments: two evaluation protocols, five seeds, a feature-group ablation, threshold-free metrics and latency benchmarks. The PaySim dataset is not included; it is available from Kaggle.",
+  "license": "MIT",
+  "keywords": ["fraud detection", "mobile money", "streaming", "idempotent processing", "fault injection", "XGBoost", "PaySim"],
+  "access_right": "open"
+}

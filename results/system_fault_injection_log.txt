@@ -1,0 +1,22 @@
+E1 {"pass": true, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": null}
+E2 {"pass": true, "crashes": 162, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E3_after_score {"pass": true, "crashes": 65, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E3_after_insert {"pass": true, "crashes": 65, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E3_between_state {"pass": true, "crashes": 65, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E3_after_state {"pass": true, "crashes": 65, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E3_after_mark {"pass": true, "crashes": 65, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E3_after_alert {"pass": true, "crashes": 65, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 1, "bit_differences_vs_fault_free_run": 0}
+E4 {"pass": true, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 9, "bit_differences_vs_fault_free_run": 0}
+E4n {"pass": true, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 9, "bit_differences_vs_fault_free_run": 0}
+E5 {"pass": true, "crashes": 164, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 9, "bit_differences_vs_fault_free_run": 0}
+E6_after_insert {"pass": true, "crashes": 34, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E6_between_state {"pass": true, "crashes": 94, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E6_after_mark {"pass": true, "crashes": 34, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E6_after_alert {"pass": true, "crashes": 94, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 94, "bit_differences_vs_fault_free_run": 0}
+E4h {"pass": true, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 3, "bit_differences_vs_fault_free_run": 0}
+E4hn {"pass": false, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 44, "duplicate_alerts_suppressed": 3, "bit_differences_vs_fault_free_run": 0}
+E7 {"pass": true, "crashes": 165, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 6, "bit_differences_vs_fault_free_run": 0}
+E8 {"pass": true, "crashes": 167, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 6, "bit_differences_vs_fault_free_run": 0}
+E10 {"pass": false, "crashes": 162, "decisions": 99965, "score_mismatches_vs_offline": 19, "state_mismatches": 237, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 19}
+E11 {"pass": false, "crashes": 94, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 175, "bit_differences_vs_fault_free_run": 0}
+E9 {"pass": true, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "missing_decisions": 0, "bit_differences_vs_fault_free_run": 0}

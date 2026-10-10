@@ -1,0 +1,84 @@
+{
+ "replicates": 2000,
+ "seed": 20261007,
+ "model_seed": 42,
+ "cluster_key": "fraud rows by (step, amount) pair, legitimate rows by nameDest",
+ "cluster_info": {
+  "n_test_rows": 1899033,
+  "n_destination_clusters": 1150818,
+  "n_frauds": 4570,
+  "n_clusters_containing_fraud": 2251,
+  "frauds_per_fraud_cluster_mean": 2.0302087960906263,
+  "frauds_per_fraud_cluster_max": 12,
+  "clusters_with_two_or_more_frauds": 2234
+ },
+ "xgb": {
+  "pr_auc_point": 0.999703177698364,
+  "pr_auc_ci95": [
+   0.9991861929646508,
+   1.0
+  ],
+  "recall_val_f1_ci95": [
+   0.9950876662091255,
+   0.998283648526429
+  ],
+  "recall_zero_fp_ci95": [
+   0.9988893639822621,
+   1.0
+  ],
+  "recall_val_f1_point": 0.9967177242888403,
+  "recall_zero_fp_point": 0.999562363238512,
+  "poisson_row_bootstrap_ci95": {
+   "pr_auc": [
+    0.9991832336919056,
+    1.0
+   ],
+   "recall_val_f1": [
+    0.9930795847750865,
+    0.9971270876922288
+   ],
+   "recall_zero_fp": [
+    0.9988962411479224,
+    1.0
+   ]
+  },
+  "width_ratio_cluster_over_poisson": {
+   "pr_auc": 0.9963768427812738,
+   "recall_val_f1": 0.7896182863186324,
+   "recall_zero_fp": 1.0062306776949828
+  }
+ },
+ "rf": {
+  "pr_auc_point": 0.9999961596901186,
+  "pr_auc_ci95": [
+   0.9999890138415237,
+   1.0
+  ],
+  "recall_val_f1_ci95": [
+   0.9879280242284123,
+   0.9949585447033642
+  ],
+  "recall_zero_fp_ci95": [
+   0.9988893639822621,
+   1.0
+  ],
+  "recall_val_f1_point": 0.9916849015317286,
+  "recall_zero_fp_point": 0.999562363238512
+ },
+ "missed_frauds_difference_xgb_minus_rf_at_val_f1": {
+  "point": -23,
+  "mean": -22.92,
+  "ci95": [
+   -41.0,
+   -6.0
+  ],
+  "share_positive": 0.003,
+  "share_zero": 0.0,
+  "share_negative": 0.997,
+  "existing_exact_mcnemar": {
+   "p": 0.013852965261321515,
+   "rf_only": 11,
+   "xgb_only": 27
+  }
+ }
+}

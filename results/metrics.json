@@ -202,5 +202,14 @@
     "batch1000_p50": 0.5390999940573238,
     "batch1000_p99": 1.14318799591274,
     "throughput_txn_per_s_batched": 1854943.4446732115
+  },
+  "rule_baseline_domain_drain": {
+    "tp": 8012,
+    "fp": 1180062,
+    "fn": 201,
+    "tn": 5174345,
+    "precision": 0.0067436876827537675,
+    "recall": 0.9755266041641301,
+    "description": "TRANSFER/CASH_OUT where originating account drained to (near) zero, amount >= 99% of oldbalanceOrg"
   }
 }

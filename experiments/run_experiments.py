@@ -69,7 +69,23 @@ results["rule_baseline_full"] = {
     "precision": float(tp / max(tp + fp, 1)),
     "recall": float(tp / max(tp + fn, 1)),
 }
-print("rule baseline:", results["rule_baseline_full"], flush=True)
+print("rule baseline (isFlaggedFraud):", results["rule_baseline_full"], flush=True)
+
+# Second, stronger rule baseline: a domain-realistic account-drain rule,
+# rather than the simulator's own internal flag. Flags TRANSFER/CASH_OUT
+# transactions that drain the originating account to (near) zero -- the
+# account-takeover-then-cash-out signature this study's own fraud typology
+# targets -- so the comparison isn't against a simulator artifact alone.
+is_relevant_type = df.type.isin(["TRANSFER", "CASH_OUT"])
+drains_account = (df.oldbalanceOrg > 0) & (df.newbalanceOrig == 0) & (df.amount >= df.oldbalanceOrg * 0.99)
+rule2_flag = (is_relevant_type & drains_account).astype(int).values
+tn2, fp2, fn2, tp2 = confusion_matrix(y_all, rule2_flag).ravel()
+results["rule_baseline_domain_drain"] = {
+    "tp": int(tp2), "fp": int(fp2), "fn": int(fn2), "tn": int(tn2),
+    "precision": float(tp2 / max(tp2 + fp2, 1)),
+    "recall": float(tp2 / max(tp2 + fn2, 1)),
+}
+print("rule baseline (account-drain rule):", results["rule_baseline_domain_drain"], flush=True)
 
 # ---------------------------------------------------------------- features
 t0 = time.time()

@@ -1,0 +1,6 @@
+[origin 50] frauds {'train': 2705, 'validation': 488, 'test': 770} XGB PR=1.00000 miss@F1=0 miss@0FP=0 | RF PR=1.00000 miss@F1=0 miss@0FP=0 (199s)
+[origin 55] frauds {'train': 2913, 'validation': 514, 'test': 780} XGB PR=1.00000 miss@F1=0 miss@0FP=0 | RF PR=1.00000 miss@F1=0 miss@0FP=0 (217s)
+[origin 60] frauds {'train': 3193, 'validation': 450, 'test': 818, 'test_open_ended': 4570} XGB PR=1.00000 miss@F1=4 miss@0FP=0 | RF PR=1.00000 miss@F1=5 miss@0FP=0 (235s)
+[origin 65] frauds {'train': 3427, 'validation': 322, 'test': 1710} XGB PR=1.00000 miss@F1=2 miss@0FP=0 | RF PR=1.00000 miss@F1=14 miss@0FP=0 (260s)
+[origin 70] frauds {'train': 3643, 'validation': 320, 'test': 4250} XGB PR=0.99976 miss@F1=2 miss@0FP=9 | RF PR=1.00000 miss@F1=10 miss@0FP=2 (276s)
+DONE

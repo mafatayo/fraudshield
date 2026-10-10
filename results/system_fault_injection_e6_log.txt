@@ -1,0 +1,4 @@
+E6_after_insert {"pass": true, "crashes": 34, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E6_between_state {"pass": true, "crashes": 94, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E6_after_mark {"pass": true, "crashes": 34, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 0, "bit_differences_vs_fault_free_run": 0}
+E6_after_alert {"pass": true, "crashes": 94, "decisions": 30000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 94, "bit_differences_vs_fault_free_run": 0}

@@ -1,0 +1,16 @@
+loaded boosters 58 56
+trained 600-round model
+trained RF
+T8_temporal_best_iteration|threads=default single p50 0.3602 p99 1.4705
+T8_temporal_best_iteration|threads=1 single p50 0.1602 p99 0.9239
+T58_temporal_all_stored|threads=default single p50 0.3811 p99 2.2430
+T58_temporal_all_stored|threads=1 single p50 0.1683 p99 0.7708
+R56_random_all_stored|threads=default single p50 0.3693 p99 1.3315
+R56_random_all_stored|threads=1 single p50 0.1612 p99 0.7425
+X600_forced_600_rounds|threads=default single p50 0.4800 p99 1.6943
+X600_forced_600_rounds|threads=1 single p50 0.3509 p99 1.4895
+RF100_depth12|threads=default {'mean': 29.476900002919137, 'min': 28.490400000009686, 'max': 31.374150014016777}
+RF100_depth12|threads=1 {'mean': 4.797766664220641, 'min': 4.735649970825762, 'max': 4.881950037088245}
+sustained 2244.6109778623554 1197999.6206352136
+{'events': 20000, 'feature_build_ms': {'p50': 0.0241999514400959, 'p95': 0.0420999713242054, 'p99': 0.06759993266314268, 'max': 2.9711000388488173, 'mean': 0.026694484299514442, 'n_ge_1ms': 2, 'n': 20000}, 'predict_ms': {'p50': 0.3613999579101801, 'p95': 0.806714972713962, 'p99': 1.6265639290213483, 'max': 440.88240002747625, 'mean': 0.5040569102973678, 'n_ge_1ms': 618, 'n': 20000}, 'feature_plus_predict_plus_state_update_ms': {'p50': 0.3918999573215842, 'p95': 0.8598650223575522, 'p99': 1.66849890025331, 'max': 440.9126000246033, 'mean': 0.5366518554103095, 'n_ge_1ms': 687, 'n': 20000}, 'max_abs_score_difference_vs_matrix_path': 0.0, 'note': 'dictionary stand-in for Redis, no network, no serialisation, single Python process'}
+DONE

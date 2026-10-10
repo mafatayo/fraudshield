@@ -1,0 +1,99 @@
+xgb done
+rf done
+xgb point: PR-AUC 0.999703177698364 missed@F1 15 missed@0FP 2
+rf point: PR-AUC 0.9999961596901186 missed@F1 38 missed@0FP 2
+{'n_test_rows': 1899033, 'n_destination_clusters': 1151211, 'n_frauds': 4570, 'n_clusters_containing_fraud': 4561, 'frauds_per_fraud_cluster_mean': 1.0019732514799387, 'frauds_per_fraud_cluster_max': 2, 'clusters_with_two_or_more_frauds': 9}
+rep 0
+rep 200
+rep 400
+rep 600
+rep 800
+rep 1000
+rep 1200
+rep 1400
+rep 1600
+rep 1800
+DONE {
+ "replicates": 2000,
+ "seed": 20261007,
+ "model_seed": 42,
+ "cluster_key": "nameDest",
+ "cluster_info": {
+  "n_test_rows": 1899033,
+  "n_destination_clusters": 1151211,
+  "n_frauds": 4570,
+  "n_clusters_containing_fraud": 4561,
+  "frauds_per_fraud_cluster_mean": 1.0019732514799387,
+  "frauds_per_fraud_cluster_max": 2,
+  "clusters_with_two_or_more_frauds": 9
+ },
+ "xgb": {
+  "pr_auc_point": 0.999703177698364,
+  "pr_auc_ci95": [
+   0.999138028573064,
+   1.0
+  ],
+  "recall_val_f1_ci95": [
+   0.99495389947795,
+   0.998251767345804
+  ],
+  "recall_zero_fp_ci95": [
+   0.9988940193769494,
+   1.0
+  ],
+  "recall_val_f1_point": 0.9967177242888403,
+  "recall_zero_fp_point": 0.999562363238512,
+  "poisson_row_bootstrap_ci95": {
+   "pr_auc": [
+    0.9991832336919056,
+    1.0
+   ],
+   "recall_val_f1": [
+    0.9930795847750865,
+    0.9971270876922288
+   ],
+   "recall_zero_fp": [
+    0.9988962411479224,
+    1.0
+   ]
+  },
+  "width_ratio_cluster_over_poisson": {
+   "pr_auc": 1.0553464539289361,
+   "recall_val_f1": 0.8147907327964222,
+   "recall_zero_fp": 1.0020129133902704
+  }
+ },
+ "rf": {
+  "pr_auc_point": 0.9999961596901186,
+  "pr_auc_ci95": [
+   0.999988599786567,
+   1.0
+  ],
+  "recall_val_f1_ci95": [
+   0.9889555580447136,
+   0.9943862930455885
+  ],
+  "recall_zero_fp_ci95": [
+   0.9988940193769494,
+   1.0
+  ],
+  "recall_val_f1_point": 0.9916849015317286,
+  "recall_zero_fp_point": 0.999562363238512
+ },
+ "missed_frauds_difference_xgb_minus_rf_at_val_f1": {
+  "point": -23,
+  "mean": -22.8515,
+  "ci95": [
+   -37.0,
+   -10.0
+  ],
+  "share_positive": 0.0015,
+  "share_zero": 0.0005,
+  "share_negative": 0.998,
+  "existing_exact_mcnemar": {
+   "p": 0.013852965261321515,
+   "rf_only": 11,
+   "xgb_only": 27
+  }
+ }
+}

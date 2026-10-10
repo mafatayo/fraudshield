@@ -1,0 +1,101 @@
+{
+ "test_rows": 1899033,
+ "frauds": 4570,
+ "xgb_missed_at_val_f1": {
+  "n": 22,
+  "TRANSFER": 7,
+  "CASH_OUT": 15,
+  "median_amount": 51113.0,
+  "min_amount": 0.0,
+  "max_amount": 399045.08,
+  "share_amount_equals_oldbalanceOrg_pct": 95.45454545454545,
+  "share_errBalOrig_zero_pct": 90.9090909090909,
+  "share_oldbalanceDest_zero_pct": 40.909090909090914,
+  "share_dest_has_prior_txn_pct": 63.63636363636363,
+  "median_step": 577.5
+ },
+ "xgb_missed_at_zero_fp": {
+  "n": 2,
+  "TRANSFER": 2,
+  "CASH_OUT": 0,
+  "median_amount": 376459.65,
+  "min_amount": 353874.22,
+  "max_amount": 399045.08,
+  "share_amount_equals_oldbalanceOrg_pct": 50.0,
+  "share_errBalOrig_zero_pct": 0.0,
+  "share_oldbalanceDest_zero_pct": 100.0,
+  "share_dest_has_prior_txn_pct": 0.0,
+  "median_step": 616.0
+ },
+ "rf_missed_at_val_f1": {
+  "n": 38,
+  "TRANSFER": 24,
+  "CASH_OUT": 14,
+  "median_amount": 3306063.525,
+  "min_amount": 0.0,
+  "max_amount": 10000000.0,
+  "share_amount_equals_oldbalanceOrg_pct": 57.89473684210527,
+  "share_errBalOrig_zero_pct": 65.78947368421053,
+  "share_oldbalanceDest_zero_pct": 71.05263157894737,
+  "share_dest_has_prior_txn_pct": 31.57894736842105,
+  "median_step": 631.5
+ },
+ "rf_missed_at_zero_fp": {
+  "n": 2,
+  "TRANSFER": 2,
+  "CASH_OUT": 0,
+  "median_amount": 376459.65,
+  "min_amount": 353874.22,
+  "max_amount": 399045.08,
+  "share_amount_equals_oldbalanceOrg_pct": 50.0,
+  "share_errBalOrig_zero_pct": 0.0,
+  "share_oldbalanceDest_zero_pct": 100.0,
+  "share_dest_has_prior_txn_pct": 0.0,
+  "median_step": 616.0
+ },
+ "caught_by_both_at_val_f1": {
+  "n": 4521,
+  "TRANSFER": 2256,
+  "CASH_OUT": 2265,
+  "median_amount": 455014.69,
+  "min_amount": 0.0,
+  "max_amount": 10000000.0,
+  "share_amount_equals_oldbalanceOrg_pct": 98.0092899800929,
+  "share_errBalOrig_zero_pct": 100.0,
+  "share_oldbalanceDest_zero_pct": 65.56071665560717,
+  "share_dest_has_prior_txn_pct": 36.82813536828136,
+  "median_step": 533.0
+ },
+ "overlap": {
+  "xgb_missed": 22,
+  "rf_missed": 38,
+  "missed_by_both": 11,
+  "missed_by_xgb_only": 11,
+  "missed_by_rf_only": 27
+ },
+ "frauds_missed_by_both_even_at_zero_fp": [
+  {
+   "step": 586,
+   "type": "TRANSFER",
+   "amount": 353874.22,
+   "oldbalanceOrg": 353874.22,
+   "newbalanceOrig": 353874.22,
+   "oldbalanceDest": 0.0,
+   "newbalanceDest": 0.0
+  },
+  {
+   "step": 646,
+   "type": "TRANSFER",
+   "amount": 399045.08,
+   "oldbalanceOrg": 10399045.08,
+   "newbalanceOrig": 10399045.08,
+   "oldbalanceDest": 0.0,
+   "newbalanceDest": 0.0
+  }
+ ],
+ "frauds_not_full_drain": {
+  "n": 106,
+  "missed_by_xgb": 1,
+  "missed_by_rf": 16
+ }
+}

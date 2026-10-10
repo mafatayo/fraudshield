@@ -1,0 +1,126 @@
+{
+ "seconds_per_rate": 30,
+ "deadline_ms": 1000.0,
+ "rates": {
+  "350": {
+   "offered_per_second": 350,
+   "events": 10500,
+   "wall_seconds": 30.453954219818115,
+   "achieved_per_second": 344.7828129053617,
+   "service_ms": {
+    "p50": 0.3071000101044774,
+    "p99": 1.2755009334068768
+   },
+   "response_ms": {
+    "p50": 0.30826422153040767,
+    "p95": 0.754885689821094,
+    "p99": 1.6095776797737948,
+    "p999": 4.610736097675063,
+    "max": 9.32680000551045
+   },
+   "events_over_100ms": 0,
+   "events_over_deadline": 0,
+   "invariants_pass": true
+  },
+  "1000": {
+   "offered_per_second": 1000,
+   "events": 30000,
+   "wall_seconds": 30.384899139404297,
+   "achieved_per_second": 987.3325516850196,
+   "service_ms": {
+    "p50": 0.1729000359773636,
+    "p99": 1.0373089823406176
+   },
+   "response_ms": {
+    "p50": 0.17699995078146458,
+    "p95": 0.4998049640562385,
+    "p99": 1.7785400373395468,
+    "p999": 7.443662883482021,
+    "max": 14.689500094391406
+   },
+   "events_over_100ms": 0,
+   "events_over_deadline": 0,
+   "invariants_pass": true
+  },
+  "2500": {
+   "offered_per_second": 2500,
+   "events": 75000,
+   "wall_seconds": 30.327346324920654,
+   "achieved_per_second": 2473.0155812666944,
+   "service_ms": {
+    "p50": 0.13329996727406979,
+    "p99": 0.6704019824974229
+   },
+   "response_ms": {
+    "p50": 0.14160003047436476,
+    "p95": 1.3573099742643542,
+    "p99": 3.886145905125862,
+    "p999": 22.714447565493355,
+    "max": 28.537399950437248
+   },
+   "events_over_100ms": 0,
+   "events_over_deadline": 0,
+   "invariants_pass": true
+  },
+  "4000": {
+   "offered_per_second": 4000,
+   "events": 120000,
+   "wall_seconds": 30.35475468635559,
+   "achieved_per_second": 3953.2521754801,
+   "service_ms": {
+    "p50": 0.12520002201199532,
+    "p99": 0.6070030818227663
+   },
+   "response_ms": {
+    "p50": 0.16029999824240804,
+    "p95": 4.484134918311603,
+    "p99": 24.20933993766072,
+    "p999": 45.448958767579086,
+    "max": 57.27999994996935
+   },
+   "events_over_100ms": 0,
+   "events_over_deadline": 0,
+   "invariants_pass": true
+  },
+  "6000": {
+   "offered_per_second": 6000,
+   "events": 180000,
+   "wall_seconds": 31.034966707229614,
+   "achieved_per_second": 5799.9095567925615,
+   "service_ms": {
+    "p50": 0.11680007446557283,
+    "p99": 0.5416030483320383
+   },
+   "response_ms": {
+    "p50": 17.383650003466755,
+    "p95": 605.3900567058007,
+    "p99": 673.6669716890902,
+    "p999": 687.3124683744973,
+    "max": 690.2589666424319
+   },
+   "events_over_100ms": 55988,
+   "events_over_deadline": 0,
+   "invariants_pass": true
+  },
+  "8000": {
+   "offered_per_second": 8000,
+   "events": 240000,
+   "wall_seconds": 38.8079137802124,
+   "achieved_per_second": 6184.305638258054,
+   "service_ms": {
+    "p50": 0.11689995881170034,
+    "p99": 0.5203040025662669
+   },
+   "response_ms": {
+    "p50": 3486.7192499223165,
+    "p95": 7984.732604923192,
+    "p99": 8360.856809988618,
+    "p999": 8450.937404073542,
+    "max": 8463.859399897046
+   },
+   "events_over_100ms": 232510,
+   "events_over_deadline": 191469,
+   "invariants_pass": true
+  }
+ }
+}

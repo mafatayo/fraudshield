@@ -1,0 +1,79 @@
+{
+ "rows": 6362620,
+ "replay_seconds": 23.058706760406494,
+ "test1_replay_parity": {
+  "origPriorTxnCount": {
+   "rows_exactly_equal": 6362620,
+   "rows_equal_within_1e-6_relative": 6362620,
+   "max_abs_diff": 0.0
+  },
+  "origTimeSinceLast": {
+   "rows_exactly_equal": 6362620,
+   "rows_equal_within_1e-6_relative": 6362620,
+   "max_abs_diff": 0.0
+  },
+  "destPriorTxnCount": {
+   "rows_exactly_equal": 6362620,
+   "rows_equal_within_1e-6_relative": 6362620,
+   "max_abs_diff": 0.0
+  },
+  "destTimeSinceLast": {
+   "rows_exactly_equal": 6362620,
+   "rows_equal_within_1e-6_relative": 6362620,
+   "max_abs_diff": 0.0
+  },
+  "destPriorAmtMean": {
+   "rows_exactly_equal": 4779676,
+   "rows_equal_within_1e-6_relative": 6362620,
+   "max_abs_diff": 7.450580596923828e-09
+  },
+  "amountOverDestMean": {
+   "rows_exactly_equal": 4897472,
+   "rows_equal_within_1e-6_relative": 6362620,
+   "max_abs_diff": 7.470371201634407e-07
+  }
+ },
+ "test1_all_rows_equal_within_tolerance": true,
+ "microbatch_seconds": 32.630974769592285,
+ "test2_microbatch_skew": {
+  "rows_with_any_feature_different": 316476,
+  "share_of_rows_pct": 4.973988702767099,
+  "fraud_rows_different": 80,
+  "share_of_fraud_pct": 0.9740655059052721,
+  "share_of_temporal_test_rows_pct": 1.2174090708271,
+  "per_feature_rows_different": {
+   "origPriorTxnCount": 47,
+   "origTimeSinceLast": 47,
+   "destPriorTxnCount": 316433,
+   "destTimeSinceLast": 316433,
+   "destPriorAmtMean": 316430,
+   "amountOverDestMean": 316417
+  }
+ },
+ "test3_test4_prefix_invariance": [
+  {
+   "truncate_at_step": 100,
+   "rows": 1059516,
+   "causal_features_unchanged": true,
+   "leaky_destPriorTxnCount_rows_changed_by_truncation": 698995
+  },
+  {
+   "truncate_at_step": 300,
+   "rows": 4073650,
+   "causal_features_unchanged": true,
+   "leaky_destPriorTxnCount_rows_changed_by_truncation": 2539337
+  },
+  {
+   "truncate_at_step": 500,
+   "rows": 6061807,
+   "causal_features_unchanged": true,
+   "leaky_destPriorTxnCount_rows_changed_by_truncation": 1218670
+  },
+  {
+   "truncate_at_step": 700,
+   "rows": 6351199,
+   "causal_features_unchanged": true,
+   "leaky_destPriorTxnCount_rows_changed_by_truncation": 46329
+  }
+ ]
+}

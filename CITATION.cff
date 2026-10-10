@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "FraudShield: reference implementation and experiments for real-time fraud detection on PaySim"
+type: software
+authors:
+  - family-names: "Fatayo"
+    given-names: "Michael Akorede"
+    affiliation: "Department of Computer Science, Lead City University, Ibadan, Nigeria"
+repository-code: "https://github.com/mafatayo/fraudshield"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-10"
+abstract: >-
+  Code and results behind the MSc thesis "Development of a Real-Time Software System for Fraud Detection in
+  High-Volume Financial Transaction Streams" (Lead City University). It contains a runnable, fault-injectable
+  reference implementation of an idempotent transaction-scoring pipeline (partitioned log, decision store,
+  apply-once state store, keyed alerts), the feature scheme, and the experiments on the PaySim dataset:
+  two evaluation protocols, five seeds, a feature-group ablation, threshold-free metrics and latency benchmarks.
+keywords:
+  - fraud detection
+  - mobile money
+  - streaming
+  - idempotent processing
+  - fault injection
+  - XGBoost
+  - PaySim

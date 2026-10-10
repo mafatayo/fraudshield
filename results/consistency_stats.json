@@ -1,0 +1,218 @@
+{
+ "rows": 6362620,
+ "frauds": 8213,
+ "fraud_rate": 0.001290820448180152,
+ "all_legitimate_accuracy": 0.9987091795518198,
+ "tc_counts": {
+  "fraud": 8213,
+  "legit": 2762196
+ },
+ "residual_shares": {
+  "exact": {
+   "errBalOrig_zero_fraud_pct": 99.3059783270425,
+   "errBalOrig_nonzero_legit_pct": 91.24529903019192,
+   "errBalDest_nonzero_fraud_pct": 64.82405941799585,
+   "errBalDest_nonzero_legit_pct": 42.02670628731632
+  },
+  "tol_0.01": {
+   "errBalOrig_zero_fraud_pct": 99.45208815292828,
+   "errBalOrig_nonzero_legit_pct": 90.58104493670977,
+   "errBalDest_nonzero_fraud_pct": 56.495799342505784,
+   "errBalDest_nonzero_legit_pct": 22.57613145482797
+  },
+  "tol_1.00": {
+   "errBalOrig_zero_fraud_pct": 99.45208815292828,
+   "errBalOrig_nonzero_legit_pct": 90.09523581961598,
+   "errBalDest_nonzero_fraud_pct": 51.57676853768416,
+   "errBalDest_nonzero_legit_pct": 9.611374428172367
+  }
+ },
+ "prevalence_by_100_step_block": [
+  {
+   "steps": "1-100",
+   "rows": 1059516,
+   "frauds": 1190,
+   "fraud_prevalence_pct": 0.11231543459466398,
+   "frauds_per_step": 11.9,
+   "legit_per_step": 10583.26
+  },
+  {
+   "steps": "101-200",
+   "rows": 1322666,
+   "frauds": 1064,
+   "fraud_prevalence_pct": 0.08044358893326055,
+   "frauds_per_step": 10.64,
+   "legit_per_step": 13216.02
+  },
+  {
+   "steps": "201-300",
+   "rows": 1691468,
+   "frauds": 1147,
+   "fraud_prevalence_pct": 0.06781091927248993,
+   "frauds_per_step": 11.47,
+   "legit_per_step": 16903.21
+  },
+  {
+   "steps": "301-400",
+   "rows": 1713380,
+   "frauds": 1076,
+   "fraud_prevalence_pct": 0.06279984591859367,
+   "frauds_per_step": 10.76,
+   "legit_per_step": 17123.04
+  },
+  {
+   "steps": "401-500",
+   "rows": 274777,
+   "frauds": 1084,
+   "fraud_prevalence_pct": 0.39450172321555294,
+   "frauds_per_step": 10.84,
+   "legit_per_step": 2736.93
+  },
+  {
+   "steps": "501-600",
+   "rows": 197240,
+   "frauds": 1052,
+   "fraud_prevalence_pct": 0.5333603731494625,
+   "frauds_per_step": 10.52,
+   "legit_per_step": 1961.88
+  },
+  {
+   "steps": "601-700",
+   "rows": 92152,
+   "frauds": 1110,
+   "fraud_prevalence_pct": 1.2045316433718205,
+   "frauds_per_step": 11.1,
+   "legit_per_step": 910.42
+  },
+  {
+   "steps": "701-743",
+   "rows": 11421,
+   "frauds": 490,
+   "fraud_prevalence_pct": 4.290342351808072,
+   "frauds_per_step": 11.395348837209303,
+   "legit_per_step": 254.2093023255814
+  }
+ ],
+ "prevalence_ratio_last_to_first_block": 38.19904510267464,
+ "prevalence_pct": {
+  "temporal_train": 0.0835732826187726,
+  "temporal_val": 0.06998575401096133,
+  "temporal_test": 0.24064879335956774,
+  "overall": 0.12908204481801522
+ },
+ "horizon": {
+  "steps": 743,
+  "days": 30.958333333333332
+ },
+ "origin_accounts": {
+  "unique": 6353307,
+  "rows_with_prior_origin_txn_pct": 0.14637052032024542,
+  "fraud_rows_with_prior_origin_txn_pct": 0.21916473882868626
+ },
+ "dest_history_pct_with_prior_txn": {
+  "all_rows": 57.21319204981595,
+  "fraud": 37.00231340557652,
+  "legit_transfer_cashout": 86.01514881637652
+ },
+ "rules": {
+  "R0_isFlaggedFraud": {
+   "full_data": {
+    "flagged": 16,
+    "tp": 16,
+    "fp": 0,
+    "fn": 8197,
+    "precision": 1.0,
+    "recall": 0.0019481310118105442
+   },
+   "temporal_test": {
+    "flagged": 13,
+    "tp": 13,
+    "fp": 0,
+    "fn": 4557,
+    "precision": 1.0,
+    "recall": 0.0028446389496717722
+   }
+  },
+  "R1_drain_newbalance_zero_amount_ge_99pct": {
+   "full_data": {
+    "flagged": 1188074,
+    "tp": 8012,
+    "fp": 1180062,
+    "fn": 201,
+    "precision": 0.0067436876827537675,
+    "recall": 0.9755266041641301
+   },
+   "temporal_test": {
+    "flagged": 359892,
+    "tp": 4444,
+    "fp": 355448,
+    "fn": 126,
+    "precision": 0.012348148889111179,
+    "recall": 0.9724288840262582
+   }
+  },
+  "R2_post_posting_drain_and_errBalOrig_zero": {
+   "full_data": {
+    "flagged": 8008,
+    "tp": 8008,
+    "fp": 0,
+    "fn": 205,
+    "precision": 1.0,
+    "recall": 0.9750395714111774
+   },
+   "temporal_test": {
+    "flagged": 4444,
+    "tp": 4444,
+    "fp": 0,
+    "fn": 126,
+    "precision": 1.0,
+    "recall": 0.9724288840262582
+   }
+  },
+  "R3_pre_auth_drain_amount_ge_oldbalance": {
+   "full_data": {
+    "flagged": 1188086,
+    "tp": 8022,
+    "fp": 1180064,
+    "fn": 191,
+    "precision": 0.006752036468740478,
+    "recall": 0.9767441860465116
+   },
+   "temporal_test": {
+    "flagged": 359899,
+    "tp": 4451,
+    "fp": 355448,
+    "fn": 119,
+    "precision": 0.012367358620057294,
+    "recall": 0.973960612691466
+   }
+  },
+  "R4_pre_auth_drain_and_first_time_destination": {
+   "full_data": {
+    "flagged": 283845,
+    "tp": 5012,
+    "fp": 278833,
+    "fn": 3201,
+    "precision": 0.017657524353080024,
+    "recall": 0.610252039449653
+   },
+   "temporal_test": {
+    "flagged": 87568,
+    "tp": 2779,
+    "fp": 84789,
+    "fn": 1791,
+    "precision": 0.03173533710944637,
+    "recall": 0.6080962800875274
+   }
+  }
+ },
+ "share_of_fraud_with_amount_equal_oldbalance_pct": 97.82052843053695,
+ "isFlaggedFraud": {
+  "n_flagged": 16,
+  "types": {
+   "TRANSFER": 16
+  },
+  "min_amount": 353874.22,
+  "transfers_over_200000": 409110
+ }
+}

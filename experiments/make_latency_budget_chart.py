@@ -1,10 +1,10 @@
 """
 Latency budget breakdown chart for Section 4.2 (Objective One Results),
 styled to match the other FraudShield figures. Uses only real numbers:
-the allocated budget split from Table 3.1, and the measured model-scoring
+the allocated budget split from Table 3.3, and the measured model-scoring
 latency (median and p99) from Section 3.5.2 / Table 4.4 -- the only stage
 this study benchmarks in isolation. The other stages are explicitly
-labelled "not benchmarked", matching Table 3.1's own honesty about what
+labelled "not benchmarked", matching Table 3.3's own honesty about what
 was and wasn't measured on a single-node commodity setup.
 """
 import matplotlib
@@ -16,7 +16,7 @@ plt.rcParams.update({"font.family": "serif", "font.size": 11})
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.4), gridspec_kw={"width_ratios": [2.3, 1]})
 
-# ---- Left: allocated budget breakdown (Table 3.1, real allocation numbers) ----
+# ---- Left: allocated budget breakdown (Table 3.3, real allocation numbers) ----
 stages = ["Ingestion &\nqueuing", "Feature computation\n& state access",
           "Model\nscoring", "Persistence &\nalert routing", "Headroom"]
 ms = [100, 300, 50, 200, 350]
@@ -47,29 +47,33 @@ ax1.set_xlim(0, 1000)
 ax1.set_ylim(-1.9, 1.2)
 ax1.set_yticks([])
 ax1.set_xlabel("Allocated latency budget (ms), 1,000 ms total end-to-end target", fontsize=10.5)
-ax1.set_title("Allocated Budget by Pipeline Stage  (Table 3.1)", fontsize=12, fontweight="bold", pad=14)
+ax1.set_title("Design Allocation by Pipeline Stage  (Table 3.3)", fontsize=12, fontweight="bold", pad=14)
 for spine in ["top", "right", "left"]:
     ax1.spines[spine].set_visible(False)
 
 # ---- Right: measured vs allocated for the one benchmarked stage ----
-labels = ["Allocated\n(50 ms)", "Measured\nmedian\n(0.21 ms)", "Measured\np99\n(0.81 ms)"]
-vals = [50, 0.21, 0.81]
-bar_colors = ["#e0e0e0", "#2f9e6e", "#2f9e6e"]
+import json, os
+_L = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "latency_v2.json")))["single_event"]
+_T8 = _L["T8_temporal_best_iteration|threads=default"]["repeats"]; _T1 = _L["T8_temporal_best_iteration|threads=1"]["repeats"]
+vals = [50, _T1["p50"]["mean"], _T8["p50"]["mean"], _T8["p99"]["mean"]]
+labels = ["Allocated (50 ms)", "Median, 1 thread (%.2f ms)" % vals[1], "Median, all threads (%.2f ms)" % vals[2], "p99, all threads (%.2f ms)" % vals[3]]
+labels = [l.replace(", ", ",\n", 1).replace(" (", "\n(") for l in labels]
+bar_colors = ["#e0e0e0", "#2f9e6e", "#2f9e6e", "#2f9e6e"]
 bars = ax2.bar(labels, vals, color=bar_colors, edgecolor="#444444", linewidth=1.1, width=0.6)
 ax2.set_yscale("log")
 ax2.set_ylim(0.1, 100)
 ax2.set_ylabel("Milliseconds (log scale)")
 ax2.set_title("Model-Scoring Stage:\nMeasured vs Allocated", fontsize=12, fontweight="bold")
 for b, v in zip(bars, vals):
-    ax2.text(b.get_x() + b.get_width() / 2, v * 1.3, f"{v:g} ms", ha="center",
+    ax2.text(b.get_x() + b.get_width() / 2, v * 1.3, f"{v:.2f} ms" if v < 10 else f"{v:g} ms", ha="center",
              fontsize=9.5, fontweight="bold")
-ax2.text(0.5, -0.38, "p99 consumes ~1.6% of the\nscoring stage's own allocation",
+ax2.text(0.5, -0.38, "One in-process call; no Redis or network.\nThe allocation is a design assumption.",
          transform=ax2.transAxes, ha="center", fontsize=8.6, color="#555555")
 for spine in ["top", "right"]:
     ax2.spines[spine].set_visible(False)
 
 note = mpatches.Patch(color="none",
-                       label="Only model scoring was benchmarked in isolation; the other stages are network-/I/O-bound and not benchmarked on this study's single-node setup.")
+                       label="Only scoring was benchmarked on its own; the other allocations are design assumptions (local-store reference pipeline: see Section 4.5.3).")
 fig.legend(handles=[note], loc="lower center", frameon=False, fontsize=8.8, bbox_to_anchor=(0.5, -0.05))
 
 plt.tight_layout(rect=[0, 0.05, 1, 1])

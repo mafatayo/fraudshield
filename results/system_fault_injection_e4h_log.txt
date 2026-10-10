@@ -1,0 +1,2 @@
+E4h {"pass": true, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 0, "duplicate_alerts_suppressed": 3, "bit_differences_vs_fault_free_run": 0}
+E4hn {"pass": false, "crashes": 0, "decisions": 100000, "score_mismatches_vs_offline": 0, "state_mismatches": 44, "duplicate_alerts_suppressed": 3, "bit_differences_vs_fault_free_run": 0}

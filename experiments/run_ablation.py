@@ -38,18 +38,25 @@ df["amountOverDestMean"] = df.amount / (df.destPriorAmtMean + 1.0)
 type_d = pd.get_dummies(df.type, prefix="type", dtype=np.int8)
 df = pd.concat([df, type_d], axis=1)
 
-TXN = ["amount", "hour", "day"] + list(type_d.columns)
+# Column order matters to XGBoost's hist tree method on tied-gain splits, and
+# this dataset's near-deterministic separability makes ties common. TYPE_COLS
+# is therefore appended LAST in every group below, exactly matching the
+# column order run_experiments.py builds (FEATURES[:18] then type_d) - so
+# G4 (the full feature set) reproduces the main experiment's XGBoost/temporal
+# run bit-for-bit rather than silently diverging on split tie-breaks.
+TYPE_COLS = list(type_d.columns)
+TXN = ["amount", "hour", "day"]
 BAL = ["oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
 CONS = ["errBalOrig", "errBalDest", "origZeroedOut", "destIsMerchant", "amountToBalanceRatio"]
 VEL = ["origPriorTxnCount", "origTimeSinceLast", "destPriorTxnCount",
        "destTimeSinceLast", "destPriorAmtMean", "amountOverDestMean"]
 
 GROUPS = {
-    "G1_transaction_only": TXN,
-    "G2_plus_raw_balances": TXN + BAL,
-    "G3_plus_consistency": TXN + BAL + CONS,
-    "G4_full_plus_velocity": TXN + BAL + CONS + VEL,
-    "G5_txn_plus_velocity_no_balance": TXN + VEL,
+    "G1_transaction_only": TXN + TYPE_COLS,
+    "G2_plus_raw_balances": TXN + BAL + TYPE_COLS,
+    "G3_plus_consistency": TXN + BAL + CONS + TYPE_COLS,
+    "G4_full_plus_velocity": TXN + BAL + CONS + VEL + TYPE_COLS,
+    "G5_txn_plus_velocity_no_balance": TXN + VEL + TYPE_COLS,
 }
 
 y = df.isFraud.values.astype(np.int8)

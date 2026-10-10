@@ -1,0 +1,35 @@
+{
+ "decisions": 6362620,
+ "missing_decisions": 0,
+ "state_applied_false": 0,
+ "score_mismatches_vs_offline": 0,
+ "max_abs_score_diff": 1.1920928955078125e-07,
+ "alerts_delivered": 8212,
+ "alerts_expected": 8212,
+ "alert_set_equal": true,
+ "alert_attempts": 8212,
+ "duplicate_alerts_suppressed": 0,
+ "accounts": 9075669,
+ "state_accounts_in_store": 9075669,
+ "state_mismatches": 0,
+ "offsets": {
+  "0": 6362620
+ },
+ "fraud_in_prefix": 8213,
+ "tp": 8164,
+ "fp": 48,
+ "fn": 49,
+ "offsets_equal_log_length": true,
+ "pass": true,
+ "n_events": 6362620,
+ "wall_seconds": 1356.8469228744507,
+ "events_per_second": 4689.268842885333,
+ "crashes": 0,
+ "latency_ms": {
+  "p50": 0.13699999544769526,
+  "p95": 0.3331999760121107,
+  "p99": 0.7876999443396926,
+  "p999": 4.755276203854206,
+  "max": 277.3779999697581
+ }
+}
