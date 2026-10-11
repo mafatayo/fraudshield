@@ -4,7 +4,7 @@ A fault-injected reference implementation of a real-time fraud-scoring pipeline 
 
 This is the research codebase behind my MSc thesis at Lead City University and a manuscript prepared for *Bridges* (FASCON 2026), under double-blind review, so the manuscript itself isn't included here. A companion write-up on the QA methodology used to structure this project's own tooling decisions is on [Zenodo](https://doi.org/10.5281/zenodo.22341782).
 
-Release v1.0.2 of this repository is the version the thesis cites.
+Release v1.0.2 of this repository is the version the thesis cites. It is archived on Zenodo: https://doi.org/10.5281/zenodo.23297120 (all versions: https://doi.org/10.5281/zenodo.23297026).
 
 ## The problem
 
