@@ -8,11 +8,11 @@ authors:
     affiliation: "Department of Computer Science, Lead City University, Ibadan, Nigeria"
 repository-code: "https://github.com/mafatayo/fraudshield"
 license: MIT
-version: "1.0.1"
+version: "1.0.2"
 date-released: "2026-10-11"
 abstract: >-
-  Code and results behind the MSc thesis "Development of a Real-Time Software System for Fraud Detection in
-  High-Volume Financial Transaction Streams" (Lead City University). It contains a runnable, fault-injectable
+  Code and results behind the MSc thesis "Development of a Fault-Injected Reference Implementation of a
+  Real-Time Fraud-Scoring Pipeline for Mobile Money Transaction Streams, with an Evaluation on PaySim" (Lead City University). It contains a runnable, fault-injectable
   reference implementation of an idempotent transaction-scoring pipeline (partitioned log, decision store,
   apply-once state store, keyed alerts), the feature scheme, and the experiments on the PaySim dataset:
   two evaluation protocols, five seeds, a feature-group ablation, threshold-free metrics and latency benchmarks.

@@ -1,10 +1,10 @@
 # FraudShield
 
-A real-time fraud detection system for high-volume financial transaction streams, evaluated on the full 6.36M-transaction PaySim dataset. The repository holds a runnable reference implementation of the scoring pipeline (a partitioned log, a decision record, an apply-once state update, keyed alerts and one worker per partition) that can be crashed on purpose, plus the experiments behind it: a causal feature scheme, two evaluation protocols (random and temporal), five seeds, a feature-group ablation and latency benchmarks. The production stack of Kafka, Spark, Redis and PostgreSQL is specified and not deployed; the reference implementation stands in for it using files and SQLite.
+A fault-injected reference implementation of a real-time fraud-scoring pipeline for mobile money transaction streams, with an evaluation on the full 6.36M-transaction PaySim dataset. The repository holds a runnable reference implementation of the scoring pipeline (a partitioned log, a decision record, an apply-once state update, keyed alerts and one worker per partition) that can be crashed on purpose, plus the experiments behind it: a causal feature scheme, two evaluation protocols (random and temporal), five seeds, a feature-group ablation and latency benchmarks. The production stack of Kafka, Spark, Redis and PostgreSQL is specified and not deployed; the reference implementation stands in for it using files and SQLite.
 
 This is the research codebase behind my MSc thesis at Lead City University and a manuscript prepared for *Bridges* (FASCON 2026), under double-blind review, so the manuscript itself isn't included here. A companion write-up on the QA methodology used to structure this project's own tooling decisions is on [Zenodo](https://doi.org/10.5281/zenodo.22341782).
 
-Release v1.0.1 of this repository is the version the thesis cites.
+Release v1.0.2 of this repository is the version the thesis cites.
 
 ## The problem
 
