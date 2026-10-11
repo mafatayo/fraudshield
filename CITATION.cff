@@ -8,8 +8,8 @@ authors:
     affiliation: "Department of Computer Science, Lead City University, Ibadan, Nigeria"
 repository-code: "https://github.com/mafatayo/fraudshield"
 license: MIT
-version: "1.0.0"
-date-released: "2026-10-10"
+version: "1.0.1"
+date-released: "2026-10-11"
 abstract: >-
   Code and results behind the MSc thesis "Development of a Real-Time Software System for Fraud Detection in
   High-Volume Financial Transaction Streams" (Lead City University). It contains a runnable, fault-injectable
