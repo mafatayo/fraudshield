@@ -173,7 +173,7 @@ Detection in High-Volume Financial Transaction Streams." Manuscript prepared
 for Bridges (FASCON 2026), Lead City University, Ibadan.
 ```
 
-See also `CITATION.cff` for the software citation (repository https://github.com/mafatayo/fraudshield, Release v1.0.0).
+See also `CITATION.cff` for the software citation (repository https://github.com/mafatayo/fraudshield, Release v1.0.2).
 
 ## License
 
